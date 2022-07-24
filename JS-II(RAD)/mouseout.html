@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MouseOut</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .button{
+            background: rgb(0, 172, 0);
+            color: white;
+            text-align: center;
+            font-size: 10px;
+            padding: auto;
+            border-radius: 10%;
+            outline: none;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container" onmouseout="CalcResult()">
+      <form>
+        <div class="form-field">
+          Insert the amount: <br/>
+          <input type="text" id="amount"/><br />
+        </div>
+        <div class="">
+            <p id="percent"></p>  
+            <p id="total"></p>    
+        </div>
+      </form>
+    </div>
+
+    <script>
+        function CalcResult(){
+            let amount = Number(document.getElementById("amount").value);
+            document.getElementById("percent").innerHTML = "20% of the value: "+amount*0.2;
+            document.getElementById("total").innerHTML = "Total: "+amount.toString() + "+"+(amount*0.2).toString()+"="+amount*1.2;
+        }
+            
+        
+    </script>
+  </body>
+</html>

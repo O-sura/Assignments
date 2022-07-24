@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-Remain</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        #button{
+            background: rgb(0, 172, 0);
+            color: white;
+            text-align: center;
+            font-size: 15px;
+            padding: 3px;
+            border-radius: 5%;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <p id="current-time"></p>
+    </div>
+        <button type="button" value="Get Current Time" id="button" onclick="GetCurrentTime()">Get Current Time</button>
+    </div>
+
+    <script>
+        function GetCurrentTime(){
+            let time = new Date();
+            let time_hrs = time.getHours();
+            let time_mins = time.getMinutes();
+            let remain = (time_mins === 0)?(24 - time_hrs):(24-time_hrs-1);
+            document.getElementById("current-time").innerHTML = "Now the time is "+time_hrs + ":" + time_mins;
+            document.getElementById("button").innerHTML = "Remains "+remain+" hours more...";
+        }
+    </script>
+</body>
+</html>

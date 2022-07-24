@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .button{
+            background: rgb(0, 172, 0);
+            color: white;
+            text-align: center;
+            font-size: 10px;
+            padding: auto;
+            border-radius: 10%;
+            outline: none;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="form-field">
+          Subject: 
+          <input type="text" placeholder="Enter Subject Name" id="subject"/><br />
+        </div>
+        <div class="form-field">
+            Marks: 
+            <input type="text" placeholder="Enter the Marks" id="marks"/><br />
+          </div>
+        <button type="button" class="button" onclick="CalcResult()">Result</button><br>
+        <p id="message"></p>
+      </form>
+    </div>
+
+    <script>
+        function CalcResult(){
+            let subject = document.getElementById("subject").value;
+            let marks = Number(document.getElementById("marks").value);
+        
+                if(75<marks)
+                    alert("You have done Great job in "+subject);
+
+                else if(65<marks && 75>marks)
+                    alert("Good but you have done much more better in "+subject);
+
+                else if(50<marks && 65>marks)
+                    alert("You have an average score in "+subject + " subject");
+
+                else if(35<marks && 50>marks)
+                    alert("You are weak in "+subject+".Study Harder");
+  
+                else if(marks<35)
+                    alert("Sorry, You have to work hard for "+subject + " subject");   
+            }
+            
+        
+    </script>
+  </body>
+</html>

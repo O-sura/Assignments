@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Root</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .button{
+            background: rgb(0, 172, 0);
+            color: white;
+            text-align: center;
+            font-size: 10px;
+            padding: auto;
+            border-radius: 10%;
+            outline: none;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="form-field">
+          Insert the number: 
+          <input type="text" placeholder="Intert the width" id="number"/><br />
+        </div>
+        <button type="button" value="Click" class="button" onclick="CalcSqrt()">Find Root</button>
+      </form>
+    </div>
+
+    <script>
+        function CalcSqrt(){
+            let number = document.getElementById("number").value;
+            alert(Math.sqrt(number));
+            
+        }
+    </script>
+  </body>
+</html>

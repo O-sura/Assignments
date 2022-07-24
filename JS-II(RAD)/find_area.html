@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Area</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .button{
+            background: rgb(0, 172, 0);
+            color: white;
+            text-align: center;
+            font-size: 10px;
+            border-radius: 10%;
+            outline: none;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="form-field">
+          Width:<br />
+          <input type="text" placeholder="Intert the width" id="width"/><br />
+        </div>
+        <div class="form-field">
+          Height:<br />
+          <input type="text" placeholder="Insert height" id="height"/><br />
+        </div>
+        <button type="button" value="Click" class="button" onclick="CalcArea()">Find Area</button>
+        <p id="area"></p>
+      </form>
+    </div>
+
+    <script>
+        function CalcArea(){
+            let width = document.getElementById("width").value;
+            let height = document.getElementById("height").value;
+            let area = width*height;
+            document.getElementById("area").innerHTML = "Area of the rectangle is "+area+" (square centimeters)";
+        }
+    </script>
+  </body>
+</html>

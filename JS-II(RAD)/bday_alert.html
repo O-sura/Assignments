@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age-Alert</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        #button{
+            background: rgb(0, 172, 0);
+            color: white;
+            text-align: center;
+            font-size: 10px;
+            border-radius: 10%;
+            outline: none;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="form-field">
+          Name:<br />
+          <input type="text" placeholder="Intert a name" id="name"/><br />
+        </div>
+        <div class="form-field">
+          Birthday:<br />
+          <input type="date" placeholder="Insert birthday" id="birthday"/><br />
+        </div>
+        <button type="button" id="button" onclick="AlertUser()">Click</button>
+      </form>
+    </div>
+
+    <script>
+        function AlertUser(){
+            let birthday = document.getElementById("birthday").value;
+            let birthday_arr = birthday.split('-');
+            
+            let currDate = new Date();
+            let currYear = currDate.getFullYear();
+
+
+            let age = 0;
+
+            if(birthday_arr[0] > currYear){
+                alert("Enter a Valid Date and Try Again")
+            }else{
+              age =  currYear - birthday_arr[0];
+            }
+            
+            alert(age);
+        }
+    </script>
+  </body>
+</html>
